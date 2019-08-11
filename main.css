@@ -1,0 +1,226 @@
+/*
+light green: #7ed56f
+medium green: #55c57a
+dark green: #28b485
+medium orange: #FFB834
+light blue: #69C2FF
+red: #FF291A
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  background-color: #E0EFFF
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #FFB834;
+}
+
+header {
+  height: 5em;
+}
+
+main {
+  padding: 1em;
+  width: 1600px;
+  margin: auto;
+}
+
+td {
+  padding: 0 .5em;
+}
+
+.nav-bar {
+  background-color: #28b485;
+  overflow: hidden;
+}
+
+.nav-bar a {
+  float: left;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.box {
+  border-style: solid;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #E3FFEA;
+}
+
+.box h4 {
+  margin-top: 2em;
+}
+
+.input {
+  float: left;
+  width: 24em;
+  z-index: 2px;
+  position: relative;
+}
+
+.btn {
+  border-radius: 9px;
+  background: #69C2FF;
+  color: white;
+  border: none;
+  padding: 1px;
+  font-size: 0.8em;
+}
+
+.btn:hover {
+  background: rgb(79, 165, 223);
+  color: rgb(223, 223, 223);
+}
+
+.food-input {
+  margin: 5px 0px;
+}
+
+.meal-selection {
+  margin: 5px 0px;
+}
+
+#food-input {
+  width: 20em;
+  height: 1.6em;
+}
+
+#grams-input-field {
+  height: 1.6em;
+}
+
+.meal {
+  margin: 0.4em;
+}
+
+.button-text {
+ padding: 0.4em;
+}
+
+.output-test {
+  font-size: .7em;
+  position: absolute;
+}
+
+.dropdown-box {
+  background-color: white;
+  border-bottom: 1px solid #777;
+  box-shadow: 5px 5px 10px #999;
+  padding: 3px;
+}
+
+.dropdown-box:hover {
+  background-color: #FFF4C3;
+  cursor: pointer;
+}
+
+.info {
+  display: inline-block;
+  padding-left: 3em;
+}
+
+.food-name-output-field {
+  width: 8em;
+  height: 2em;
+  background: #fff;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: .9em;
+}
+
+.total-nutrients {
+  width: 8em;
+  height: 2em;
+}
+
+
+.output-nutrient-category {
+  width: 5em;
+  text-align: center;
+}
+
+.meals-output-field {
+  width: 5em;
+  height: 2em;
+  background: #fff;
+  padding: 0.2em;
+  text-align: center;
+  font-size: .9em;
+}
+
+.individual-data {
+  width: 7em;
+  background: #fff;
+}
+
+.meal-heading {
+  float: left;
+}
+
+.food-display {
+  width: 8em;
+}
+
+.small {
+  font-size: .7em;
+}
+
+#input-calculate {
+  margin-left: 1em;
+}
+
+.delete-food {
+  font-size: .9em;
+  padding: .3em;
+  background: #FF291A;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.delete-food:hover {
+  background: rgb(216, 44, 31);
+  color: rgb(223, 223, 223);
+}
+
+td[class*="total"] {
+  font-size: .9em;
+  background: #E0EFFF;
+}
+
+td[class*='daily-total'] {
+  background: #FEEFCD;
+}
+
+table[id*='table'] {
+  border-top: 1px solid #777;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.total-nutrients-daily {
+  margin-top: 2em;
+}
+

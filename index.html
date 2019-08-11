@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head class="">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        <title>Nutrients Trackers</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <a class="#"><h1 class="logo">Nutrients Tracker</h1></a>
+                <a href="#recipies">Recipes</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>            
+            </nav>
+        </header>
+
+        <main>
+            <section class="input">
+                <div class="search">
+                    <h3>Food Search</h3>
+                    <div class="box input-box">
+                        <form action="">
+                            <div class="food-input">
+                                <label for="food-input">Food:</label>
+                                <input type="text" id="food-input" name="food-input" placeholder="enter food">
+                                <ul class="output-test"></ul>
+                            </div>
+                            
+                            <div class="grams-input">
+                                <label for="grams-input">Weight: <span class="small">(grams)</span></label>
+                                <input type="text" name="grams-input" id="grams-input-field" class="weight" value="">
+                                <button class="btn" type="submit" id="input-calculate"><p class="button-text">Calculate</p></button>
+                            </div>
+                            <div class="meal-selection">
+                                <label for="meal-selection">
+                                    <input type="radio" name="meal" class="meal" value="breakfast">Breakfast
+                                    <input type="radio" name="meal" class="meal" value="lunch">Lunch
+                                    <input type="radio" name="meal" class="meal" value="dinner">Dinner
+                                    <input type="radio" name="meal" class="meal" value="snack">Snack
+                                </label>
+                            </div>
+                            <button class="btn" type="submit" id="addButton"><p class="button-text">Add to meals</p></button>
+                            
+                        </form>
+                    </div>
+                </div>   		
+            </section>
+
+            <section class="info">
+                <div class="nutritional-info">
+                    <h3>Nutrition Information</h3>
+                    <div class="box">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Calories</td>
+                                    <td class="individual-data calories">0.0</td>
+                                    <td>Vitamin A</td>
+                                    <td class="individual-data vitamin-a">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein</td>
+                                    <td class="individual-data protein">0.0</td>
+                                    <td>Vitamin B12</td>
+                                    <td class="individual-data vitamin-b12">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates</td>
+                                    <td class="individual-data carbohydrates">0.0</td>
+                                    <td>Vitamin C</td>
+                                    <td class="individual-data vitamin-c">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Fats</td>
+                                    <td class="individual-data fats">0.0</td>
+                                    <td>Vitamin D</td>
+                                    <td class="individual-data vitamin-d">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Magnesium</td>
+                                    <td class="individual-data magnesium">0.0</td>
+                                    <td>Vitamin E</td>
+                                    <td class="individual-data vitamin-e">0.0</td>
+                                    </tr>
+                                <tr>
+                                    <td>Potassium</td>
+                                    <td class="individual-data potassium">0.0</td>
+                                    <td>Vitamin K</td>
+                                    <td class="individual-data vitamin-k">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sodium</td>
+                                    <td class="individual-data sodium">0.0</td>
+                                    <td>Sugar</td>
+                                    <td class="individual-data sugar">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Fiber</td>
+                                    <td class="individual-data fiber">0.0</td>
+                                    <td>Cholesterol</td>
+                                    <td class="individual-data cholesterol">0.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="meals">
+                <div class="meals-info">
+                    <H3>Meals</H3>
+                    <div class="box">
+                        <h4>Breakfast</h4>
+                        <table id="table-breakfast">
+                            <tbody class="table-breakfast-body">
+                                <tr>
+                                    <td class="output-nutrient-category">Food</td>  
+                                    <td class="output-nutrient-category">calories</td>
+                                    <td class="output-nutrient-category">protein</td>
+                                    <td class="output-nutrient-category">carbs</td>
+                                    <td class="output-nutrient-category">fats</td>
+                                    <td class="output-nutrient-category">magnesium</td>
+                                    <td class="output-nutrient-category">potassium</td>             
+                                    <td class="output-nutrient-category">sodium</td>
+                                    <td class="output-nutrient-category">fiber</td>
+                                    <td class="output-nutrient-category">vit A</td>
+                                    <td class="output-nutrient-category">vit B12</td>
+                                    <td class="output-nutrient-category">vit C</td>
+                                    <td class="output-nutrient-category">vit D</td>
+                                    <td class="output-nutrient-category">vit E</td>
+                                    <td class="output-nutrient-category">vit K</td>                   
+                                    <td class="output-nutrient-category">sugar</td>
+                                    <td class="output-nutrient-category">cholesterol</td>
+                                </tr>           
+                            </tbody>
+                            <tbody>
+                                <tr class="total-nutrients-breakfast">
+                                    <td class="total-nutrients">Total: </td>
+                                    <td class="calories-breakfast-total">0.0</td>
+                                    <td class="protein-breakfast-total">0.0</td>
+                                    <td class="carbohydrates-breakfast-total">0.0</td>
+                                    <td class="fats-breakfast-total">0.0</td>
+                                    <td class="magnesium-breakfast-total">0.0</td>
+                                    <td class="potassium-breakfast-total">0.0</td>
+                                    <td class="sodium-breakfast-total">0.0</td>
+                                    <td class="fiber-breakfast-total">0.0</td>
+                                    <td class="vitamin-a-breakfast-total">0.0</td>
+                                    <td class="vitamin-b12-breakfast-total">0.0</td>
+                                    <td class="vitamin-c-breakfast-total">0.0</td>
+                                    <td class="vitamin-d-breakfast-total">0.0</td>
+                                    <td class="vitamin-e-breakfast-total">0.0</td>
+                                    <td class="vitamin-k-breakfast-total">0.0</td>
+                                    <td class="sugar-breakfast-total">0.0</td>
+                                    <td class="cholesterol-breakfast-total">0.0</td>
+                                </tr> 
+                            </tbody>
+                        </table>                                       
+                        <h4>Lunch</h4>
+                        <table id="table-lunch">
+                            <tbody class="table-lunch-body">
+                                <tr>
+                                    <td class="output-nutrient-category">Food</td>  
+                                    <td class="output-nutrient-category">calories</td>
+                                    <td class="output-nutrient-category">protein</td>
+                                    <td class="output-nutrient-category">carbs</td>
+                                    <td class="output-nutrient-category">fats</td>
+                                    <td class="output-nutrient-category">magnesium</td>
+                                    <td class="output-nutrient-category">potassium</td>             
+                                    <td class="output-nutrient-category">sodium</td>
+                                    <td class="output-nutrient-category">fiber</td>
+                                    <td class="output-nutrient-category">vit A</td>
+                                    <td class="output-nutrient-category">vit B12</td>
+                                    <td class="output-nutrient-category">vit C</td>
+                                    <td class="output-nutrient-category">vit D</td>
+                                    <td class="output-nutrient-category">vit E</td>
+                                    <td class="output-nutrient-category">vit K</td>                   
+                                    <td class="output-nutrient-category">sugar</td>
+                                    <td class="output-nutrient-category">cholesterol</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="total-nutrients-lunch">
+                                    <td class="total-nutrients">Total: </td>
+                                    <td class="calories-lunch-total">0.0</td>
+                                    <td class="protein-lunch-total">0.0</td>
+                                    <td class="carbohydrates-lunch-total">0.0</td>
+                                    <td class="fats-lunch-total">0.0</td>
+                                    <td class="magnesium-lunch-total">0.0</td>
+                                    <td class="potassium-lunch-total">0.0</td>
+                                    <td class="sodium-lunch-total">0.0</td>
+                                    <td class="fiber-lunch-total">0.0</td>
+                                    <td class="vitamin-a-lunch-total">0.0</td>
+                                    <td class="vitamin-b12-lunch-total">0.0</td>
+                                    <td class="vitamin-c-lunch-total">0.0</td>
+                                    <td class="vitamin-d-lunch-total">0.0</td>
+                                    <td class="vitamin-e-lunch-total">0.0</td>
+                                    <td class="vitamin-k-lunch-total">0.0</td>
+                                    <td class="sugar-lunch-total">0.0</td>
+                                    <td class="cholesterol-lunch-total">0.0</td>
+                                </tr> 
+                            </tbody>
+                        </table>                   
+                        <h4>Dinner</h4>
+                        <table id="table-dinner">
+                            <tbody class="table-dinner-body">
+                                <tr>
+                                    <td class="output-nutrient-category">Food</td>  
+                                    <td class="output-nutrient-category">calories</td>
+                                    <td class="output-nutrient-category">protein</td>
+                                    <td class="output-nutrient-category">carbs</td>
+                                    <td class="output-nutrient-category">fats</td>
+                                    <td class="output-nutrient-category">magnesium</td>
+                                    <td class="output-nutrient-category">potassium</td>             
+                                    <td class="output-nutrient-category">sodium</td>
+                                    <td class="output-nutrient-category">fiber</td>
+                                    <td class="output-nutrient-category">vit A</td>
+                                    <td class="output-nutrient-category">vit B12</td>
+                                    <td class="output-nutrient-category">vit C</td>
+                                    <td class="output-nutrient-category">vit D</td>
+                                    <td class="output-nutrient-category">vit E</td>
+                                    <td class="output-nutrient-category">vit K</td>                   
+                                    <td class="output-nutrient-category">sugar</td>
+                                    <td class="output-nutrient-category">cholesterol</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="total-nutrients-dinner">
+                                    <td class="total-nutrients">Total: </td>
+                                    <td class="calories-dinner-total">0.0</td>
+                                    <td class="protein-dinner-total">0.0</td>
+                                    <td class="carbohydrates-dinner-total">0.0</td>
+                                    <td class="fats-dinner-total">0.0</td>
+                                    <td class="magnesium-dinner-total">0.0</td>
+                                    <td class="potassium-dinner-total">0.0</td>
+                                    <td class="sodium-dinner-total">0.0</td>
+                                    <td class="fiber-dinner-total">0.0</td>
+                                    <td class="vitamin-a-dinner-total">0.0</td>
+                                    <td class="vitamin-b12-dinner-total">0.0</td>
+                                    <td class="vitamin-c-dinner-total">0.0</td>
+                                    <td class="vitamin-d-dinner-total">0.0</td>
+                                    <td class="vitamin-e-dinner-total">0.0</td>
+                                    <td class="vitamin-k-dinner-total">0.0</td>
+                                    <td class="sugar-dinner-total">0.0</td>
+                                    <td class="cholesterol-dinner-total">0.0</td>
+                                </tr> 
+                            </tbody>
+                        </table>                  
+                        <h4>Snacks</h4>
+                        <table id="table-snacks">
+                            <tbody class="table-snacks-body">
+                                <tr>
+                                    <td class="output-nutrient-category">Food</td>  
+                                    <td class="output-nutrient-category">calories</td>
+                                    <td class="output-nutrient-category">protein</td>
+                                    <td class="output-nutrient-category">carbs</td>
+                                    <td class="output-nutrient-category">fats</td>
+                                    <td class="output-nutrient-category">magnesium</td>
+                                    <td class="output-nutrient-category">potassium</td>             
+                                    <td class="output-nutrient-category">sodium</td>
+                                    <td class="output-nutrient-category">fiber</td>
+                                    <td class="output-nutrient-category">vit A</td>
+                                    <td class="output-nutrient-category">vit B12</td>
+                                    <td class="output-nutrient-category">vit C</td>
+                                    <td class="output-nutrient-category">vit D</td>
+                                    <td class="output-nutrient-category">vit E</td>
+                                    <td class="output-nutrient-category">vit K</td>                   
+                                    <td class="output-nutrient-category">sugar</td>
+                                    <td class="output-nutrient-category">cholesterol</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="total-nutrients-snacks">
+                                    <td class="total-nutrients">Total: </td>
+                                    <td class="calories-snacks-total">0.0</td>
+                                    <td class="protein-snacks-total">0.0</td>
+                                    <td class="carbohydrates-snacks-total">0.0</td>
+                                    <td class="fats-snacks-total">0.0</td>
+                                    <td class="magnesium-snacks-total">0.0</td>
+                                    <td class="potassium-snacks-total">0.0</td>
+                                    <td class="sodium-snacks-total">0.0</td>
+                                    <td class="fiber-snacks-total">0.0</td>
+                                    <td class="vitamin-a-snacks-total">0.0</td>
+                                    <td class="vitamin-b12-snacks-total">0.0</td>
+                                    <td class="vitamin-c-snacks-total">0.0</td>
+                                    <td class="vitamin-d-snacks-total">0.0</td>
+                                    <td class="vitamin-e-snacks-total">0.0</td>
+                                    <td class="vitamin-k-snacks-total">0.0</td>
+                                    <td class="sugar-snacks-total">0.0</td>
+                                    <td class="cholesterol-snacks-total">0.0</td>
+                                </tr> 
+                            </tbody>                                                     
+                        </table>
+                        <h4>Daily</h4>
+                        <table id="table-daily">
+                            <tbody>
+                                <tr>
+                                    <td class="output-nutrient-category"></td>  
+                                    <td class="output-nutrient-category">calories</td>
+                                    <td class="output-nutrient-category">protein</td>
+                                    <td class="output-nutrient-category">carbs</td>
+                                    <td class="output-nutrient-category">fats</td>
+                                    <td class="output-nutrient-category">magnesium</td>
+                                    <td class="output-nutrient-category">potassium</td>             
+                                    <td class="output-nutrient-category">sodium</td>
+                                    <td class="output-nutrient-category">fiber</td>
+                                    <td class="output-nutrient-category">vit A</td>
+                                    <td class="output-nutrient-category">vit B12</td>
+                                    <td class="output-nutrient-category">vit C</td>
+                                    <td class="output-nutrient-category">vit D</td>
+                                    <td class="output-nutrient-category">vit E</td>
+                                    <td class="output-nutrient-category">vit K</td>                   
+                                    <td class="output-nutrient-category">sugar</td>
+                                    <td class="output-nutrient-category">cholesterol</td>
+                                </tr>
+                                <tr class="total-nutrients-daily">
+                                    <td class="total-nutrients daily-total"><p class="bold">Total: </p></td>
+                                    <td class="calories-daily-total">0.0</td>
+                                    <td class="protein-daily-total">0.0</td>
+                                    <td class="carbohydrates-daily-total">0.0</td>
+                                    <td class="fats-daily-total">0.0</td>
+                                    <td class="magnesium-daily-total">0.0</td>
+                                    <td class="potassium-daily-total">0.0</td>
+                                    <td class="sodium-daily-total">0.0</td>
+                                    <td class="fiber-daily-total">0.0</td>
+                                    <td class="vitamin-a-daily-total">0.0</td>
+                                    <td class="vitamin-b12-daily-total">0.0</td>
+                                    <td class="vitamin-c-daily-total">0.0</td>
+                                    <td class="vitamin-d-daily-total">0.0</td>
+                                    <td class="vitamin-e-daily-total">0.0</td>
+                                    <td class="vitamin-k-daily-total">0.0</td>
+                                    <td class="sugar-daily-total">0.0</td>
+                                    <td class="cholesterol-daily-total">0.0</td>
+                                </tr> 
+                            </tbody>
+                        </table>                                        
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+    <script src="script.js"></script>
+</html>
