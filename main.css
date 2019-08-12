@@ -73,22 +73,22 @@ td {
 .input {
   float: left;
   width: 24em;
+  height: 1.6em;
   z-index: 2px;
   position: relative;
 }
 
 .btn {
   border-radius: 9px;
-  background: #69C2FF;
+  background: rgb(84, 201, 255);
   color: white;
   border: none;
-  padding: 1px;
+  padding: 2px;
   font-size: 0.8em;
 }
 
 .btn:hover {
   background: rgb(79, 165, 223);
-  color: rgb(223, 223, 223);
 }
 
 .food-input {
@@ -101,11 +101,13 @@ td {
 
 #food-input {
   width: 20em;
-  height: 1.6em;
+  height: 2em;
+  border-radius: 9px;
 }
 
 #grams-input-field {
-  height: 1.6em;
+  height: 2em;
+  border-radius: 9px;
 }
 
 .meal {
