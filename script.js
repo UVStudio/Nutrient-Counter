@@ -54,7 +54,7 @@ function measurement(x){
 //Function declaration to add current food and nutrients to the correct meal
 
 function createTableRow(y){
-	const tableRow = '<tr class="table-' + y + '-row"><td class="food-name-output-field ' + y + '"></td><td class="meals-output-field ' + y + ' calories"></td><td class="meals-output-field ' + y + ' protein"></td><td class="meals-output-field ' + y + ' carbohydrates"></td><td class="meals-output-field ' + y + ' fats"></td><td class="meals-output-field ' + y + ' magnesium"></td><td class="meals-output-field ' + y + ' potassium"></td><td class="meals-output-field ' + y + ' sodium"></td><td class="meals-output-field ' + y + ' fiber"></td><td class="meals-output-field ' + y + ' vitamin-a"></td><td class="meals-output-field ' + y + ' vitamin-b12"></td><td class="meals-output-field ' + y + ' vitamin-c"></td><td class="meals-output-field ' + y + ' vitamin-d"></td><td class="meals-output-field ' + y + ' vitamin-e"></td><td class="meals-output-field ' + y + ' vitamin-k"></td><td class="meals-output-field ' + y + ' sugar"></td><td class="meals-output-field ' + y + ' cholesterol"></td><td><button class="delete-food" type="button">X</button></td></tr>';
+	const tableRow = `<tr class="table-${y}-row"><td class="food-name-output-field ${y}"></td><td class="meals-output-field ${y} calories"></td><td class="meals-output-field ${y} protein"></td><td class="meals-output-field ${y} carbohydrates"></td><td class="meals-output-field ${y} fats"></td><td class="meals-output-field ${y} magnesium"></td><td class="meals-output-field ${y} potassium"></td><td class="meals-output-field ${y} sodium"></td><td class="meals-output-field ${y} fiber"></td><td class="meals-output-field ${y} vitamin-a"></td><td class="meals-output-field ${y} vitamin-b12"></td><td class="meals-output-field ${y} vitamin-c"></td><td class="meals-output-field ${y} vitamin-d"></td><td class="meals-output-field ${y} vitamin-e"></td><td class="meals-output-field ${y} vitamin-k"></td><td class="meals-output-field ${y} sugar"></td><td class="meals-output-field ${y} cholesterol"></td><td><button class="delete-food" type="button">X</button></td></tr>`
 	return tableRow;
 };
 
@@ -65,15 +65,13 @@ let nutrientsCompletedArray = [];
 
 const nutrientsArray = ['.fiber', '.vitamin-a', '.vitamin-k', '.vitamin-e', '.protein', '.vitamin-c', '.sugar', '.fats', '.carbohydrates', '.magnesium', '.cholesterol', '.potassium', '.vitamin-d', '.calories', '.sodium', '.vitamin-b12'];
 
-
 function addToMeals(){
 	event.preventDefault();
 	//saving from the radio selections which meal to print food under
 	const meal = document.querySelector('.meal:checked').value;
 	nutrientsCompletedArray = [];
-	for(i = 0; i < nutrientsArray.length; i++){
-		nutrientsCompletedArray.push(document.querySelector(nutrientsArray[i]).textContent);
-	};
+	nutrientsArray.forEach(e => nutrientsCompletedArray.push(document.querySelector(e).textContent));
+
 
 	switch(meal){
 		case 'breakfast':
@@ -98,12 +96,12 @@ function printToMeals(x){
 	const mealFoodName = document.getElementById('food-input').value;
 	const rowNode = document.createElement('tr');
 	const foodNameOutputField = '.food-name-output-field';
-	rowNode.setAttribute('class', 'table-' + x + '-row');
-	document.querySelector('.table-' + x + '-body').appendChild(rowNode);
-	document.querySelector('.table-' + x + '-body').lastChild.innerHTML = createTableRow(x);
+	rowNode.setAttribute('class', `table-${x}-row`);
+	document.querySelector(`.table-${x}-body`).appendChild(rowNode);
+	document.querySelector(`.table-${x}-body`).lastChild.innerHTML = createTableRow(x);
 
 	//var to print nutrient info onto the last (new) row
-	const lastRowElementIndex = document.querySelectorAll('.table-' + x + '-row').length-1;
+	const lastRowElementIndex = document.querySelectorAll(`.table-${x}-row`).length-1;
 	for(i = 0; i < nutrientsArray.length; i++){
 		document.querySelectorAll('.'+ x + foodNameOutputField)[lastRowElementIndex].textContent = mealFoodName;
 		//.breakfast.fiber, .breakfast.vitamin-a, etc... selecting multiple class names
@@ -114,17 +112,17 @@ function printToMeals(x){
 	//n is param for different nutrients
 	function sumEachNutrient(n){
 		const numbersOnlyRegex = /[^0-9.]/g; 
-		const nutrientsCollection = document.querySelectorAll('.meals-output-field' + '.' + x + nutrientsArray[n]);
+		const nutrientsCollection = document.querySelectorAll(`.meals-output-field.${x + nutrientsArray[n]}`);
 		let nutrientsCollectionArray = [];
 		for(i = 0; i < nutrientsCollection.length; i++){
 			nutrientsCollectionArray.push(Number(nutrientsCollection[i].innerText.replace(numbersOnlyRegex, '')));
 		};
 		if(nutrientsCollectionArray.length > 0){
 			let totalNutrients = nutrientsCollectionArray.reduce(sumArray);
-			document.querySelector(nutrientsArray[n] + '-' + x + '-total').textContent = totalNutrients.toFixed(1) + measurement(n);
+			document.querySelector(`${nutrientsArray[n]}-${x}-total`).textContent = totalNutrients.toFixed(1) + measurement(n);
 		} else {
 			let zeroNutrients = 0.0;
-			document.querySelector(nutrientsArray[n] + '-' + x + '-total').textContent = zeroNutrients.toFixed(1);
+			document.querySelector(`${nutrientsArray[n]}-${x}-total`).textContent = zeroNutrients.toFixed(1);
 		};
 	};
 
@@ -132,19 +130,21 @@ function printToMeals(x){
 	//x is meal, n is nutrient
 	function sumEachNutrientDaily(n){
 		const numbersOnlyRegex = /[^0-9.]/g; 
-		const nutrientsCollectionDaily = document.querySelectorAll('.meals-output-field' + nutrientsArray[n]);
+		const nutrientsCollectionDaily = document.querySelectorAll(`.meals-output-field${nutrientsArray[n]}`);
 		let nutrientsCollectionDailyArray = [];
 		for(i = 0; i < nutrientsCollectionDaily.length; i++){
 			nutrientsCollectionDailyArray.push(Number(nutrientsCollectionDaily[i].innerText.replace(numbersOnlyRegex, '')));
 		};
 		if(nutrientsCollectionDailyArray.length > 0){
 			let totalNutrients = nutrientsCollectionDailyArray.reduce(sumArray);
-			document.querySelector(nutrientsArray[n] + '-' + 'daily-total').textContent = totalNutrients.toFixed(1) + measurement(n);
+			document.querySelector(`${nutrientsArray[n]}-daily-total`).textContent = totalNutrients.toFixed(1) + measurement(n);
 		} else {
 			let zeroNutrients = 0.0;
-			document.querySelector(nutrientsArray[n] + '-' + 'daily-total').textContent = zeroNutrients.toFixed(1);
+			document.querySelector(`${nutrientsArray[n]}-daily-total`).textContent = zeroNutrients.toFixed(1);
 		};
 	};
+
+	
 
 	//sum all nutrients per meal
 	function sumAllNutrients(){
@@ -165,7 +165,7 @@ function printToMeals(x){
 
 
 	//Function to delete row
-	let rowToDelete = document.querySelector('.table-' + x + '-body');
+	let rowToDelete = document.querySelector(`.table-${x}-body`);
 	function deleteTableRow(){
 		rowToDelete.addEventListener('click', deleteRow);
 	};
@@ -215,7 +215,7 @@ requestNutrients.onload = function(){
 			//print dropdown list 
 			deleteDropdown()
 			for(i = 0; i < dropdownList.length; i++){		
-				document.querySelector('.output-test').innerHTML += '<li class="dropdown-box">'+dropdownList[i]+'</li>';
+				document.querySelector('.output-test').innerHTML += `<li class="dropdown-box">${dropdownList[i]}</li>`;
 			};
 
 			//select from dropdown list and fill in input field with selection
